@@ -1,0 +1,25 @@
+% This is the input file for the image filtering algorithm
+% Any text after a % is ignored (used to be # but some file names has that included)
+% The input file is ordered specifically so if you change the order or add/remove a field
+% ...you need to then change the python script accordingly
+% first item is the path to the input images
+C:/Users/mattg_000/Documents/Research/ImageFilterCode/OSUphantomHDPE1_11-29-21/
+HDPE1_Projection % base file name without the number
+Float % numbering system for images can be Integer (0,1,2...), Float (0.0,1.0,2.0...) TripleInteger (000,001,002...)
+MedianDifference/ %path to median difference images relative to input path. Put None if need to create these
+HDPE1_Projection_MedDiff % base name of the median difference image. Put None if we need to create these
+Float % numbering system for median difference image
+HDPE1_11-29-21_SwitchMedFiltered_UsingNeighbors/ %output file path relative to input path
+HDPE1_11-29-21_Filtered_ %OutputBaseName
+HDPE1_FlaggedNoise_	%Flag map name
+359 % maximum degree reached
+0 % starting degree (usually 0 or 1)
+1 % increment between each (in case of integer type needs to be 1 or some int)
+NoDup % Are there multiple images at each angle? YesDup for yes NoDup for no
+% Do you want the filter to use neighboring radiographs to fill gray val?
+YesNeighbors % YesNeighbors for yes or NoNeighbors for no
+NoFlag % YesFlag means we need to track the noise. NoFlag means we don't need to do the track noise step as we already have them
+2 % number of open beam images to consider
+OpenBeam %open beam image name
+50	%Percent of open beam standard deviation that identifies noise (typically 50% for fast neutrons and 150% for thermal) 
+25	%percent of open beam standard deviation that identifies bloomed noise (25% fast, 50% thermal)
